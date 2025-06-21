@@ -11,7 +11,7 @@ public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy(); // 새로운 할인 정책 시 메서드 변경
-    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
+    private DiscountPolicy discountPolicy;
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
