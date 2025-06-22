@@ -4,7 +4,7 @@ public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
-    public MemberServiceImpl(MemberRepository memberRepository) {
+    public MemberServiceImpl(MemberRepository memberRepository) { // AppConfig로 MemoryMemberRepository 할당
         this.memberRepository = memberRepository;
     }
 
