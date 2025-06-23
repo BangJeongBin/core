@@ -24,7 +24,7 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-//        return new FixDiscountPolicy();
+//        return new FixDiscountPolicy(); AppConfig의 메서드 구현부분만 수정하면 쉽게 요구사항 변경 가능
         return new RateDiscountPolicy();
     }
 }
