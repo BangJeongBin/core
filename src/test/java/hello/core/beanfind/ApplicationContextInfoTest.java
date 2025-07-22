@@ -13,6 +13,7 @@ public class ApplicationContextInfoTest {
     @Test
     @DisplayName("모든 빈 출력하기")
     void findAllBean() {
+        // getBeanDefinitionNames() : 스프링에 등록된 모든 빈 이름을 조회한다.
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
 
         for (String beanDefinitionName : beanDefinitionNames) {
