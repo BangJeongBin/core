@@ -31,7 +31,7 @@ public class ApplicationContextBasicFindTest {
     }
 
     @Test
-    @DisplayName("구체 타입으로 조회")
+    @DisplayName("구체 타입으로 조회") // 유연성이 떨어지므로 권장 X
     void findBeanByName2() {
         MemberService memberService = ac.getBean("memberService", MemberServiceImpl.class);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
