@@ -32,4 +32,19 @@ public class ApplicationContextSameBeanFindTest {
         MemberRepository memberRepository = ac.getBean("memberRepository1", MemberRepository.class);
         assertThat(memberRepository).isInstanceOf(MemberRepository.class);
     }
+
+
+    @Configuration // 클래스 안에 정적 클래스 사용시 이 클래스 안에서만 사용하겠다는 의
+    static class SameBeanConfig {
+
+        @Bean
+        public MemberRepository memberRepository1() {
+            return new MemoryMemberRepository();
+        }
+
+        @Bean
+        public MemberRepository memberRepository2() {
+            return new MemoryMemberRepository();
+        }
+    }
 }
