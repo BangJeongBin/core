@@ -54,7 +54,8 @@ public class SingletonTest {
         MemberService memberService1 = ac.getBean("memberService", MemberService.class);
         MemberService memberService2 = ac.getBean("memberService", MemberService.class);
 
-        // 참조값이 다른 것을 확인
+        // 참조값이 같은 것을 확인
+        // 스프링이 자동으로 싱글톤으로 객체를 생성
         System.out.println("memberService1 = " + memberService1);
         System.out.println("memberService2 = " + memberService2);
 
