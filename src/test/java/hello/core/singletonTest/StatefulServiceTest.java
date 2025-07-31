@@ -16,15 +16,17 @@ class StatefulServiceTest {
         StatefulService statefulService2 = ac.getBean(StatefulService.class);
 
         // ThreadA : A사용자가 10,000원 주문
-        statefulService1.order("userA", 10000);
+        int userAOrder = statefulService1.order("userA", 10000); // 지역변수로 만들어 문제 해결
         // ThreadB : B사용자가 20,000원 주문
-        statefulService1.order("userB", 20000);
+        int userBOrder = statefulService1.order("userB", 20000); // ,,
 
         // ThreadA : 사용자A 주문 금액 조회
-        int price = statefulService1.getPrice();
-        System.out.println("price = " + price); // 싱글톤의 단점
+        //int price = statefulService1.getPrice();
+        //System.out.println("price = " + price); // 싱글톤의 단점
+        System.out.println("userAOrder = " + userAOrder);
+        System.out.println("userBOrder = " + userBOrder);
 
-        Assertions.assertThat(statefulService1.getPrice()).isEqualTo(20000);
+        Assertions.assertThat(userBOrder).isEqualTo(20000);
     }
 
     static class TestConfig {
