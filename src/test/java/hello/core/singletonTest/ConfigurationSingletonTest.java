@@ -31,4 +31,13 @@ public class ConfigurationSingletonTest {
         assertThat(orderService.getMemberRepository()).isSameAs(memberRepository);
     }
 
+    @Test
+    void configurationDeep() {
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class);
+
+        System.out.println("bean = " + bean.getClass());
+        // -> hello.core.AppConfig$$SpringCGLIB$$0 => CGLIB라는 바이트코드 조작 라이브러리를 사용
+    }
+
 }
