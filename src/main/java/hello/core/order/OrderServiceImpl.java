@@ -1,5 +1,6 @@
 package hello.core.order;
 
+import com.sun.source.tree.UsesTree;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
@@ -14,7 +15,7 @@ public class OrderServiceImpl implements OrderService {
     private final DiscountPolicy discountPolicy;
 
     // AppConfig로 MemoryMemberRepository, FixDiscountPolicy 할당
-    @Autowired
+    //@Autowired // 생성자가 1개 인 경우 @Autowired 생략 가능
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
