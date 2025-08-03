@@ -19,7 +19,7 @@ public class OrderServiceImpl implements OrderService {
 
     // AppConfig로 MemoryMemberRepository, FixDiscountPolicy 할당
     //@Autowired // 생성자가 1개 인 경우 @Autowired 생략 가능
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) { // lombok 사용으로 주석처리
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) { // lombok 사용으로 주석처리
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
