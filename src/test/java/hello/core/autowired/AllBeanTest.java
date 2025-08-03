@@ -33,7 +33,7 @@ public class AllBeanTest {
     }
 
     static class DiscountService {
-        private final Map<String, DiscountPolicy> policyMap;
+        private final Map<String, DiscountPolicy> policyMap; // 실무에서 자주 쓰이는 방식 (Map, List)
         private final List<DiscountPolicy> policies;
 
         @Autowired
