@@ -20,6 +20,7 @@ public class BeanLifeCycleTest {
     static class LifeCycleConfig {
 
         @Bean //(initMethod = "init", destroyMethod = "close")
+              // ==> 코드를 고칠 수 없는 외부 라이브러리를 초기화, 종료 해야 할 때 사용
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring-dev");

@@ -29,6 +29,7 @@ public class NetworkClient {
         System.out.println("close: " + url);
     }
 
+    // 가장 권장하는 방법
     @PostConstruct
     public void init() {
         System.out.println("NetworkClient.init");
@@ -36,6 +37,7 @@ public class NetworkClient {
         call("초기화 연결 메세지");
     }
 
+    // 〃
     @PreDestroy
     public void close() {
         System.out.println("NetworkClient.close");
